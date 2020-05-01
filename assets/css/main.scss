@@ -3,7 +3,7 @@
 
 @import 'custom/bootstrap-override';
 @import 'bootstrap/bootstrap';
-@import 'custom/includes/header';
+@import 'custom/includes/navbar';
 @import 'custom/includes/_social-btn';
 @import 'custom/includes/gallery';
 @import 'custom/includes/footer';
@@ -20,4 +20,159 @@
 //googlefont
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,700');
 
+//circus begins
+.about-bg-colour{
+  background-color: #F4F4EE;
+}
 
+#about{
+  @include media-breakpoint-up(lg){
+    padding: 150px 0;
+  }
+}
+
+.about{
+  height:100%;
+  width:100%;
+  position: relative;
+
+  &__media{
+    position: relative;
+
+    //fix for mobile
+    @include media-breakpoint-up(lg){
+      position: absolute;
+    }
+
+    z-index: 10;
+    padding: 75px 0;
+
+    @media screen and (min-width: 1900px) {
+      left:10%;
+
+    }
+  }
+
+  &__content{
+    position: relative;
+
+    @include media-breakpoint-up(lg){
+      //fix for mobile
+      @include centerer;
+      width:60%;
+    }
+
+    z-index: 5;
+
+    h1{
+      color: #001565;
+    }
+
+    span{
+      @include font-heavy(20px);
+    }
+
+    a{
+      @include font-light(20px);
+    }
+
+    a:hover{
+      text-decoration: none;
+    }
+  }
+
+}
+
+//working with experts
+.experts{
+  height:100%;
+  position: relative;
+
+  &__content{
+    @include centerer;
+    color:#43283A;
+    width:70%;
+  }
+
+  &__header{
+    width:60%;
+
+    h2{
+      text-align: left;
+    }
+  }
+
+  &__body{
+    p{
+      font-size: rem-calc(20px);
+    }
+  }
+}
+
+//for your well being
+.being-bg-colour{
+  background-color: #43283A;
+}
+
+.being{
+  height:100%;
+  position: relative;
+
+  &__content{
+    @include centerer;
+    width:90%;
+    position: relative;
+    color:#fff;
+
+    .being__media-bg{
+      width:100%;
+      height:100%;
+      background-color: darken(#43283A, 5%);
+      border-radius: 50%;
+
+
+      img{
+        width:80%;
+        left:50%;
+        transform: translateX(-50%);
+        position: relative;
+      }
+    }
+  }
+
+  .being__content--reduce-width{
+    @include media-breakpoint-up(lg){
+      width:60%;
+    }
+
+    .being__header{
+      h2{
+        text-align: left;
+      }
+    }
+
+  }
+}
+
+//were all over the shops
+
+
+//carousel
+
+
+//gallery
+
+
+//tula
+
+
+//contact
+
+.bar{
+  bottom:0;
+  width:100%;
+  height:5px;
+  background-color: red;
+  position: absolute;
+  z-index: 10;
+}

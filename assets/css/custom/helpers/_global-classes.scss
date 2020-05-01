@@ -19,3 +19,14 @@ h2{
 h3, h4{
   text-align: center;
 }
+
+p{
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-right: 88px;
+  }
+}
+

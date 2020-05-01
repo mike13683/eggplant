@@ -1,0 +1,40 @@
+//navbar
+#navbarNav ul li{
+  padding:0 10px;
+}
+
+//moves navbar right
+.navbar.fixed-top{
+  left:auto;
+}
+
+.navbar{
+  height: 100%;
+  //width:80px;
+}
+
+.navbar-bg-colour{
+  background-color: #d6d6d6;
+}
+
+//removes default burger icon
+.navbar-light .navbar-toggler-icon {
+  background-image: none;
+}
+
+//navbar icon colour
+.navbar-light .navbar-toggler {
+  color: rgba(255, 255, 255, 0.0) !important;
+  border-color: #fff;
+}
+
+//moves toggle bar to top of menu
+.nav-wrapper{
+  position: relative;
+  height:100%;
+
+  .navbar-toggler{
+    top:0;
+    position: relative;
+  }
+}
