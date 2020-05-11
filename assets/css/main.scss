@@ -37,24 +37,34 @@
   position: relative;
 
   &__media{
-    position: relative;
 
     //fix for mobile
     @include media-breakpoint-up(lg){
       position: absolute;
     }
-
     z-index: 10;
     padding: 75px 0;
 
     @media screen and (min-width: 1900px) {
-      left:10%;
+      img{
+        position: relative;
+
+        left:250px !important;
+      }
 
     }
+    @include media-breakpoint-up(lg) {
+      img {
+        position: relative;
+        left: 75px;
+      }
+    }
+
   }
 
   &__content{
     position: relative;
+
 
     @include media-breakpoint-up(lg){
       //fix for mobile
@@ -89,16 +99,36 @@
   position: relative;
 
   &__content{
-    @include centerer;
+    //@include centerer;
+    position: relative;
+    top:0;
+    left:50%;
+    transform: translateY(0%) translateX(-50%);
     color:#43283A;
-    width:70%;
+
+
+
+    @include media-breakpoint-up(lg) {
+      width:70%;
+    }
+
+
+    @include media-breakpoint-down(md) {
+      position: relative;
+    }
   }
 
   &__header{
-    width:60%;
+    @include media-breakpoint-up(lg) {
+      width:60%;
+    }
 
     h2{
       text-align: left;
+
+      @include media-breakpoint-down(lg) {
+        @include font-heavy(24px);
+      }
     }
   }
 
@@ -107,8 +137,21 @@
       font-size: rem-calc(20px);
     }
   }
-}
 
+  &__media{
+
+    overflow: hidden;
+    @include media-breakpoint-up(lg){
+      a{
+        height:1500px;
+      }
+    }
+
+  }
+}
+.foo{
+  padding:25px;
+}
 //for your well being
 .being-bg-colour{
   background-color: #43283A;
@@ -151,28 +194,172 @@
       }
     }
 
+    //@include media-breakpoint-up(lg){
+    .buy-bottles{
+      width:250px;
+      height:500px;
+      background-color: #fff;
+      position: absolute;
+      bottom:100px;
+    }
+    //}
   }
 }
 
 //were all over the shops
+.shop-bg-image{
+  background: url("{{site.url}}/assets/img/shop.png") center center no-repeat;
+  background-size: cover;
+  height:500px;
 
+  @include media-breakpoint-up(lg){
+    height:800px;
+  }
+}
 
-//carousel
+.shop{
+
+  &__content{
+    @include centerer;
+    color:#fff;
+  }
+
+  h2{
+
+    @include media-breakpoint-up(lg){
+      font-size: rem-calc(70px);
+
+    }
+  }
+}
 
 
 //gallery
+.gallery-bg-colour{
+  background-color: #e4e4dc;
+}
 
+
+
+
+.gallery{
+  position: relative;
+  height:100%;
+
+  &__content{
+    position: absolute;
+    top:0;
+    left:0;
+    padding: 15px;
+    width:80%;
+
+  }
+
+  .gallery__header{
+
+    h2 {
+      text-align: left;
+      font-size: rem-calc(40px);
+    }
+  }
+}
+.gallery img{
+  transform: scaleX(0);
+  transform-origin: left;
+  left:0;
+  transition: all 0.5s;
+}
+
+.gallery:hover img{
+  transform: scaleX(1);
+  left:100%;
+}
 
 //tula
+.tula{
+  position: relative;
+  height:100%;
 
+  &__content{
+    @include centerer;
+    position: relative;
 
-//contact
+    h2{
+      line-height: 0.6;
+      font-size: rem-calc(60px);
+    }
 
-.bar{
-  bottom:0;
-  width:100%;
-  height:5px;
-  background-color: red;
-  position: absolute;
-  z-index: 10;
+    .header-MICROPONES{
+      font-size: rem-calc(24px);
+    }
+
+    img{
+      max-width: 95%;
+    }
+
+    .tula__body{
+      p{
+        font-size: rem-calc(20px);
+      }
+    }
+
+    &--left{
+      left:0;
+    }
+  }
+
+  .tula-buttons{
+    position: absolute;
+    bottom:0;
+
+    .btn{
+      border-radius: 100%;
+      padding: 1rem;
+      border: 1px solid black;
+    }
+
+    .tula-buttons-text{
+      @include font-heavy(20px);
+    }
+
+    .tula-buttons-1{
+      background-color: #eceae0;
+    }
+
+    .tula-buttons-2{
+      background-color: #1e1e1e;
+    }
+
+    .tula-buttons-3{
+      background-color: #cb554d;
+    }
+  }
 }
+//contact
+.contact{
+  position: relative;
+  height:100%;
+
+  &__content{
+    @include centerer;
+    width:90%;
+
+    p{
+      font-size: rem-calc(50px);
+    }
+
+    a{
+      font-size: rem-calc(28px);
+
+    }
+  }
+}
+
+//.bar{
+//  bottom:0;
+//  width:100%;
+//  height:5px;
+//  background-color: red;
+//  position: absolute;
+//  z-index: 10;
+//}
